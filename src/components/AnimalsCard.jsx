@@ -1,10 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const AnimalsCard = ({ animal }) => {
   console.log(animal);
-  const { name, image, category, description, location, price, type, weight } =
-    animal;
+  const {
+    name,
+    image,
+    category,
+    description,
+    location,
+    price,
+    type,
+    weight,
+    age,
+    breed,
+  } = animal;
   return (
     <div className="card bg-base-100 w-full shadow-sm">
       <figure className="relative w-full aspect-square">
@@ -23,7 +34,9 @@ const AnimalsCard = ({ animal }) => {
         <h2 className="card-title">{name}</h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <Link href={`all-animals/${animal.id}`} className="btn btn-primary">
+            View Detials
+          </Link>
         </div>
       </div>
     </div>
