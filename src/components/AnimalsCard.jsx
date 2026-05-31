@@ -7,15 +7,21 @@ const AnimalsCard = ({ animal }) => {
     animal;
   return (
     <div className="card bg-base-100 w-full shadow-sm">
-      <figure>
-        <Image src={image} height={200} width={200} alt={name} />
+      <figure className="relative w-full aspect-square">
+        <Image
+          src={image}
+          fill
+          alt={name}
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="absolute right-2 top-2 badge badge-soft badge-accent">
+          {type}
+        </div>
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
+        <h2 className="card-title">{name}</h2>
+        <p>{description}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Buy Now</button>
         </div>
