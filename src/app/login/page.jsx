@@ -10,6 +10,7 @@ const LoginPage = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmitHandler = (data) => {
     console.log(data);
   };
@@ -47,7 +48,7 @@ const LoginPage = () => {
             )}
           </fieldset>
           <div>
-            Don't have an account?
+            {"Don't have an account? "}
             <Link href={"/signup"} className="text-blue-400 my-2">
               Sign up here
             </Link>
